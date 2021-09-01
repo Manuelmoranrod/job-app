@@ -1,25 +1,31 @@
+
+require("dotenv").config();
+const process = require('process')
 const express = require('express');
 const path = require('path');
-
+const port = process.env.PORT
 const coursesRoutes = require('./router/courses');
 
 const app = express();
 
 app.use('/', coursesRoutes);
-
-//Uso de la carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
 
 //EJS como motor de vista
 app.set('view engine', 'ejs');
-
-//Raíz de la carpeta
 app.set('views', path.join(__dirname, 'views'));
 
 
-
-
-app.listen(3000, (req, res) => {
-    console.log('Conectado al puerto 3000!!');
+app.listen(port, () => {
+    console.log(`Nasa Landings app listening at http://localhost:${port}/`)
 });
+
+
+
+app.get('*', (req, res)=>{
+    res.status(404).send("Sorry... 404 Not Found");
+});
+
+
+
