@@ -25,7 +25,7 @@ app.set('views','./views');
 
 
 app.listen(port, () => {
-    console.log(`Nasa Landings app listening at http://localhost:${port}/`)
+    console.log(`Job-app  listening at http://localhost:${port}/`)
 });
 
 
