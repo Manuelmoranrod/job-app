@@ -10,8 +10,12 @@ const frontView = {
     login:(req,res) => {
         res.status(200).render('login')
     },
-
-
+    favoritos: (req, res) => {
+    res.status(200).render('favoritos')
+    },
+    profile: (req, res) => {
+    res.status(200).render('profile')
+    },
 }
 
 module.exports = frontView

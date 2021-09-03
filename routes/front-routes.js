@@ -7,9 +7,14 @@ router.get('/', frontViews.home)
 router.get('/singup', frontViews.singup)//inscription formulary
 router.get('/login', frontViews.login)// login with auth 
 
-router.get('/favorites', (req, res) => {
-    res.render('favoritos')
-});
+router.get('/favorites', frontViews.favoritos)
+router.get('/profile', frontViews.profile)
+
+
+
+
+
+
 
 
 
