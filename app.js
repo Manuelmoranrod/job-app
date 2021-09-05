@@ -1,11 +1,18 @@
 require("dotenv").config();
-const process = require('process')
+const process = require('process');
 const express = require('express');
 const path = require('path');
-const port = process.env.PORT
+const port = process.env.PORT;
 const routes = require('./routes/front-routes');
 
+
+
 const app = express();
+
+
+require('./utils/db');
+
+
 
 
 
@@ -32,5 +39,5 @@ app.get('*', (req, res)=>{
 
 
 app.listen(port, () => {
-    console.log(`Conectados al puerro ${port}!!`)
+    console.log(`Conectados al puerto ${port}!!`)
 });

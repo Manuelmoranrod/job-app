@@ -1,4 +1,4 @@
-//const mongoose = require('../utils/nosql_db')
+const mongoose = require('../utils/db')
 
 const CourseSchema = new mongoose.Schema({
     title: {

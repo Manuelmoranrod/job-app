@@ -1,4 +1,4 @@
-const courseSchema = require('../models/courseSchema')
+//const courseSchema = require('../models/courseSchema')
 
 const frontView = {
     home: (req,res) => {
