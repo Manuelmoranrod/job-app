@@ -15,6 +15,11 @@ const frontView = {
         res.status(200).render('users')
     },
     
+    users:(req,res) => {
+        console.log("estoy en la función dashboard" );
+        res.status(200).render('dashboard')
+    },
+    
 
 
 }
