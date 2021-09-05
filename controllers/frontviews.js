@@ -10,6 +10,7 @@ const frontView = {
     login:(req,res) => {
         res.status(200).render('login')
     },
+
     users:(req,res) => {
         console.log("estoy en la función users" );
         res.status(200).render('users')
@@ -20,8 +21,13 @@ const frontView = {
         res.status(200).render('dashboard')
     },
     
-
-
+    favoritos: (req, res) => {
+    res.status(200).render('favoritos')
+    },
+    profile: (req, res) => {
+    res.status(200).render('profile')
+    },
 }
 
-module.exports = frontView
+    module.exports = frontView
+
