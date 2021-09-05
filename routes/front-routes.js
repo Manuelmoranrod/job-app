@@ -9,23 +9,7 @@ router.get('/login', frontViews.login)// login with auth
 
 router.get('/favorites', frontViews.favoritos)
 router.get('/profile', frontViews.profile)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+router.get('/users', frontViews.users) 
 
 
 module.exports = router
