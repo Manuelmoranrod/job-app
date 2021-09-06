@@ -5,7 +5,7 @@ mongoose.connect(process.env.DATABASE_URL, { useNewUrlParser: true, useUnifiedTo
 
 const db = mongoose.connection;
 db.on("error", error => console.log(error));
-db.once("open", () => console.log("connection to DDBB established"));
+db.once("open", () => console.log("Connection to DDBB established"));
 
 
 

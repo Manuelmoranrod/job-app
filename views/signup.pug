@@ -1,0 +1,19 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title SignUp page
+    body
+        .register-container
+            label(for="name") Name:
+            input(type="text" name="name" id="name" required) 
+            label(for="mail") Email
+            input(type="mail" name="mail" id="mail" required)
+            label(for="birthdate") Birthdate
+            input(type="date" name="birthdate" id="birthdate")
+            label(for="password") Password
+            .password-container
+                input(type="password" name="password" id="password" required) 
+                i(id="togglePassword" class="fas fa-eye-slash")
+            input(type="submit", value="Signup User")
