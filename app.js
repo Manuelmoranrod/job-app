@@ -1,22 +1,12 @@
-require("dotenv").config();
-const process = require('process');
 const express = require('express');
+require('dotenv').config();
 require('./utils/db')
+const process = require('process')
 const path = require('path');
-
-const port = process.env.PORT;
-const routes = require('./routes/front-routes');
-
-
-const app = express();
-
-
-require('./utils/db');
-
-
 const port = process.env.PORT
 const routes = require('./routes/front-routes');
 const app = express();
+
 
 
 app.use(express.static(path.join(__dirname, 'public')));
@@ -33,7 +23,5 @@ app.get('*', (req, res)=>{
 
 app.listen(port, () => {
  console.log(`Conectados al puerto ${port}!!`)
-
- 
 
 });

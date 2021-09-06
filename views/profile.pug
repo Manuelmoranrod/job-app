@@ -1,0 +1,70 @@
+doctype html
+html(lang='es')
+  head
+    meta(charset='UTF-8')
+    meta(http-equiv='X-UA-Compatible' content='IE=edge')
+    meta(name='viewport' content='width=device-width, initial-scale=1.0')
+    link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.5.0/css/all.css' integrity='sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU' crossorigin='anonymous')
+    link(rel='stylesheet' href='profile.css')
+    title Favoritos
+  body
+    // Icono de inicio
+.inicio
+  i.fas.fa-home.fa-2x
+// Barra de búsqueda
+span.logout LogOut
+// Trajeta curso
+.content
+  form.formulario(method='GET' action='vitae.php' name='miform')
+    .imagen
+      img.img(src='https://i.blogs.es/24bcec/the-batman-affleck/840_560.jpg')
+    .campo
+      p Nombre
+      input.input(type='text' name='nombre' value='Bruce')
+    .campo.dos
+      p Password
+      input.input(type='password' name='nombre' value='12345')
+    .campo.tres
+      p Imagen
+      input.input(type='text' name='nombre' value='https://i.blogs.es/24bcec/the-batman-affleck/840_560.jpg')
+    .campo.abajo
+      p Email
+      input.input(type='email' name='email' value='info@batman.com')
+    .btn
+      button.boton Editar
+// Menú-footer
+footer.header
+  .usuario
+    img.btm(src='https://i.blogs.es/24bcec/the-batman-affleck/840_560.jpg' alt='')
+    .name
+      a(href='/profile') Bru
+      |  Arnold
+  nav.navbar
+    a.nav-logo(href='#')
+    ul.nav-menu
+      li.nav-item
+        a.nav-link(href='#') Inicio
+      li.nav-item
+        a.nav-link(href='#') Buscar cursos
+      li.nav-item
+        a.nav-link(href='#') Logout
+      li.nav-item
+        a.nav-link(href='#') Editar perfil
+    .hamburger
+      span.bar
+      span.bar
+      span.bar
+  script.
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    hamburger.addEventListener("click", mobileMenu);
+    function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    }
+    const navLink = document.querySelectorAll(".nav-link");
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+    function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    }
