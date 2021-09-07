@@ -25,7 +25,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
             courseData['courseDates'] = await page.$eval('.course-venues__date-item:nth-child(n)', dates => dates.innerText)
             courseData['courseLocation'] = await page.$eval('.course-box-item.feature-box:nth-child(n)', location => location.innerText)
 
-            courseData['courseAcadeny'] = await page.$eval('section > div.title-box > div > a', academy => academy.title)
+            courseData['courseAcademy'] = await page.$eval('section > div.title-box > div > a', academy => academy.title)
          
             console.log(courseData);
 
