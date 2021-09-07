@@ -19,5 +19,5 @@ router.put('/ads', apiRouter.editCourse) //For Admin view
 router.delete('/ads', apiRouter.deleteCourse)
 
 //Favorites
-router.post('/favorites', apiRouter.saveFavorite)
+router.post('/favorites', apiRouter.saveFavorite)//DDBB SQL
 router.delete('/favorites', apiRouter.deleteCourse)
