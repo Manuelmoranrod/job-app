@@ -10,15 +10,19 @@
 // router.post('/login', apiRouter.loginApp)
 // router.post('/logout', apiRouter.exitApp)
 
+
 // //Endpoints Search
  router.get('/search', apiRouter.searchCourse)
 
-// //Course Cards
-// router.post('ads', apiRouter.createCourse) //For Admin view
-// router.put('/ads', apiRouter.editCourse) //For Admin view
-// router.delete('/ads', apiRouter.deleteCourse)
 
-// //Favorites
-// router.post('/favorites', apiRouter.saveFavorite)//DDBB SQL
-// router.delete('/favorites', apiRouter.deleteCourse)
+//Course Cards
+//router.post('ads', apiRouter.createCourse) //For Admin view
+//router.put('/ads', apiRouter.editCourse) //For Admin view
+//router.delete('/ads', apiRouter.deleteCourse)
+
+//Favorites
+//router.post('/favorites', apiRouter.saveFavorite)//DDBB SQL
+//router.delete('/favorites', apiRouter.deleteCourse)
+
+
 module.exports = router

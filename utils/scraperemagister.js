@@ -8,10 +8,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
         
         const courseData = {}
 
-       
         const page = await browser.newPage()
-   
-       
 
         await page.goto(link)
     
@@ -36,7 +33,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
     }
 })
 
-const scraper = async (url) => {
+const scraperEmagister = async (url) => {
     try {
         const scraperData = [] //Array vacio
         console.log("Opening the browser......");
@@ -47,11 +44,11 @@ const scraper = async (url) => {
         await page.goto(url)
         console.log(`Navigating to ${url}...`);
 
-        await page.type('#q', 'javascript');
+        //await page.type('#q', 'javascript');
 
-        await page.click('#frmcategHome > div > button');
+        //await page.click('#frmcategHome > div > button');
 
-        await page.waitForTimeout(2000);
+        //await page.waitForTimeout(2000);
 
         const urls = await page.$$eval('div.course-box-item.title-box > h3 > a', (links) => links.map(link=> link.href))
         console.log('urls capturada', urls.length, urls);
@@ -61,8 +58,8 @@ const scraper = async (url) => {
         for(courseLink in urls){
             const course = await extractCourseData(urls[courseLink], browser)
             scraperData.push(course)
-          }
-         console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        }
+        console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
 
 
     } catch (err) {
@@ -70,4 +67,8 @@ const scraper = async (url) => {
     }
 }
 
-scraper('http://www.emagister.com')
+//scraper('http://www.emagister.com')
+
+module.exports = { 
+    scraperEmagister
+}
