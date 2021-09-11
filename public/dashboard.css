@@ -1,5 +1,37 @@
 body {
+    background-color:rgb(154, 154, 179);
     box-sizing: border-box;
     top: 0;
     margin: 0;
+    justify-content: space-between;
+    width: 100%;
+    display: flex;
+   
     }
+
+    .footer{
+        background-color: cornflowerblue;
+        width: 100%;
+        justify-content: space-around;
+
+     }
+
+     .imgHmb{
+         
+         width: 100%;
+         margin: auto;
+         justify-content:right;
+         width: 50px;
+         margin-left:300px;
+ }
+     .imgProfile{
+         width:30px;
+         height:30px;
+
+     }
+     @media screen and (min-width: 480px) {
+        body {
+          background-color: cornflowerblue;
+        }
+      }
+     

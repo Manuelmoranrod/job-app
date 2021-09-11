@@ -56,6 +56,8 @@ const scraper = async (url) => {
         await page.click('#homepageSearchButton');
 
         await page.waitForTimeout(1000);
+        //prueba 
+        await page.click('.navbar-toggle collapsed');
 
         const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href))
         console.log('urls capturada', urls.length, urls);
