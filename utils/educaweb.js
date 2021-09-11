@@ -31,7 +31,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
     }
 })
 
-const scraper = async (url) => {
+const scraperEducaweb = async (url) => {
     try {
 
         const scraperData = []
@@ -45,17 +45,6 @@ const scraper = async (url) => {
         await page.goto(url)
         console.log(`Navigating to ${url}...`);
 
-        await page.waitForTimeout(4000); // Esperamos para aceptar las cookies
-
-        await page.click('#onetrust-accept-btn-handler');
-
-        await page.type('#pal', 'javascript');
-
-        await page.waitForTimeout(2000);
-
-        await page.click('#homepageSearchButton');
-
-        await page.waitForTimeout(1000);
 
         const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href))
         console.log('urls capturada', urls.length, urls);
@@ -73,4 +62,10 @@ const scraper = async (url) => {
     }
 }
 
-scraper('http://www.educaweb.com')
+//scraperEducaweb('https://www.educaweb.com/')
+
+module.exports = {
+    scraperEducaweb
+}
+//exportado como objeto, no como funcion
+
