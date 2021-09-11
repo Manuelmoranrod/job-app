@@ -14,3 +14,18 @@ html(lang="en")
         .cards
         include ./menu-bar.pug
         
+    script. 
+        const input = document.querySelector('#input_search');
+        const button = document.querySelector('#btn_search');
+            
+            button.addEventListener('click', () => {
+                
+                let newData = async () => { 
+                    const apiData = await fetch(`/api/search?keyword=${input.value}`)//fetch a nuestra api
+                    const data = await apiData.json();
+                    console.log(data)
+                    return data;
+                }
+                newData()//el click deberia llamar a la funcion
+            })
+
