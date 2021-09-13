@@ -12,7 +12,6 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
         await page.goto(link)
     
         await page.waitForTimeout(500);
-
             
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.$eval('div.course.container.m-t-30 > div:nth-child(2) > div > div > div:nth-child(2) > div > div', description => description.innerText)
@@ -31,7 +30,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
     }
 })
 
-const scraper = async (url) => {
+const scraperEducaweb = async (url) => {
     try {
 
         const scraperData = []
@@ -45,27 +44,18 @@ const scraper = async (url) => {
         await page.goto(url)
         console.log(`Navigating to ${url}...`);
 
-        await page.waitForTimeout(4000); // Esperamos para aceptar las cookies
-
-        await page.click('#onetrust-accept-btn-handler');
-
-        await page.type('#pal', 'javascript');
-
-        await page.waitForTimeout(2000);
-
-        await page.click('#homepageSearchButton');
-
-        await page.waitForTimeout(1000);
 
         const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href))
-        console.log('urls capturada', urls.length, urls);
+        //console.log('urls capturada', urls.length, urls);
 
         
         for(courseLink in urls){
             const course = await extractCourseData(urls[courseLink], browser)
             scraperData.push(course)
         }
-        console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        //console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        return scraperData
+
 
 
     } catch (err) {
@@ -73,4 +63,10 @@ const scraper = async (url) => {
     }
 }
 
-scraper('http://www.educaweb.com')
+//scraperEducaweb('https://www.educaweb.com/')
+
+module.exports = {
+    scraperEducaweb
+}
+//exportado como objeto, no como funcion
+
