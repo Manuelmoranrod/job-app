@@ -11,8 +11,12 @@ const app = express();
 
 app.use(express.static(path.join(__dirname, "public")));
 
+
 app.set("view engine", "pug");
 app.set("views", "./views");
+
+app.use(express.json())
+
 
 app.use("/", routes);
 
@@ -25,3 +29,4 @@ app.get("*", (req, res) => {
 app.listen(port, () => {
   console.log(`Conectados al puerto ${port}!!`);
 });
+
