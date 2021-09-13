@@ -12,7 +12,6 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
         await page.goto(link)
     
         await page.waitForTimeout(500);
-
             
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.$eval('div.course.container.m-t-30 > div:nth-child(2) > div > div > div:nth-child(2) > div > div', description => description.innerText)
@@ -47,14 +46,16 @@ const scraperEducaweb = async (url) => {
 
 
         const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href))
-        console.log('urls capturada', urls.length, urls);
+        //console.log('urls capturada', urls.length, urls);
 
         
         for(courseLink in urls){
             const course = await extractCourseData(urls[courseLink], browser)
             scraperData.push(course)
         }
-        console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        //console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        return scraperData
+
 
 
     } catch (err) {

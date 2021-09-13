@@ -5,6 +5,7 @@ const frontView = {
         res.status(200).render('home')
     },
     signup: (req,res) => {
+        
         res.status(200).render('signup')
     },
     login:(req,res) => {
@@ -16,7 +17,7 @@ const frontView = {
         res.status(200).render('users')
     },
     
-    users:(req,res) => {
+    dashboard:(req,res) => {
         console.log("estoy en la función dashboard" );
         res.status(200).render('dashboard')
     },
@@ -24,6 +25,7 @@ const frontView = {
     favoritos: (req, res) => {
     res.status(200).render('favoritos')
     },
+
     profile: (req, res) => {
     res.status(200).render('profile')
     },
