@@ -11,6 +11,8 @@ const app = express();
 
 
 app.use(express.static(path.join(__dirname, 'public')));
+//Middlewares
+app.use(express.json())
 
 
 app.set('view engine', 'pug');
@@ -24,6 +26,6 @@ app.get('*', (req, res)=>{
 });
 
 app.listen(port, () => {
- console.log(`Conectados al puerto ${port}!!`)
+    console.log(`Conectados al puerto ${port}!!`)
 
 });
