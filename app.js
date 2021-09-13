@@ -7,7 +7,7 @@ const port = process.env.PORT;
 const routes = require("./routes/front-routes");
 const apiRoutes = require("./routes/api-routes");
 const app = express();
-const apiRoutes = require("./routes/api-routes");
+
 
 app.use(express.static(path.join(__dirname, "public")));
 
