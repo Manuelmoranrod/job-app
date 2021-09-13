@@ -4,10 +4,10 @@ button.addEventListener('click', async() => {
         
         const apiData = await fetch("http://localhost:3000/api/user", {
             Accept: 'application/json',
-            method: "POST",
+            modeth: "POST",
             body: JSON.stringify({
                     'name': document.getElementById('name').value,
-                    'email': document.getElementById('mail').value,
+                    'email': document.getElementById('email').value,
                     'password': document.getElementById('password').value,
             }),
             headers: {
@@ -15,7 +15,7 @@ button.addEventListener('click', async() => {
             },
         })
         const data = await apiData.json();
-        console.log(data)
+        console.log('DATA DE REGISTER', data)
         return data;
     
 })

@@ -24,10 +24,14 @@ const apiRouter = {
     },
     registerUser: async (req,res)=> {
         try{
-            const data = req.body
+           const data = req.body
+        //    console.log('REQBODY.EMAIL', req.body.name);
+        //    console.log('REQBODY.NAME', req.body.email);
             // Insert SQL (api/user)
+            //console.log('CLG API PETITIONS', data)
             const num = await Users.insertUser(data)
-            res.status(200).json({ message: "Usuario creado"+ num})
+            console.log('NUM', num);
+            res.status(200).json({ message: "Usuario creado"+ num});
 
         }catch(error){
             res.status(400).json({

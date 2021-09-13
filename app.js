@@ -14,6 +14,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 //Middlewares
 app.use(express.json())
 
+app.use(express.urlencoded({extended: true}));
 
 app.set('view engine', 'pug');
 app.set('views','./views');
