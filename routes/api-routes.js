@@ -7,14 +7,14 @@ router.post('/user', apiRouter.registerUser)
 //router.delete('/user', apiRouter.deleteUser) //For Admin view
 
 //Endpoints Log IN/OUT
-//router.post('/login', apiRouter.loginApp)
+router.post('/login', apiRouter.loginApp)
 //router.post('/logout', apiRouter.exitApp)
 
 //Endpoints Search
 router.get('/search', apiRouter.searchCourse)
 
 //Course Cards
-//router.post('ads', apiRouter.createCourse) //For Admin view
+//router.post('/ads', apiRouter.createCourse) //For Admin view
 //router.put('/ads', apiRouter.editCourse) //For Admin view
 //router.delete('/ads', apiRouter.deleteCourse)
 
