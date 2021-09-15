@@ -11,7 +11,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
 
         await page.goto(link)
     
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(100);
             
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.$eval('div.course.container.m-t-30 > div:nth-child(2) > div > div > div:nth-child(2) > div > div', description => description.innerText)

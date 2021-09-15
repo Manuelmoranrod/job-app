@@ -10,7 +10,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
 
         await page.goto(link)
     
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(100);
         
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.evaluate(() => Array.from(document.querySelectorAll('.course-box__text.app_course-box-content.app_description-box'), element => element.textContent));
