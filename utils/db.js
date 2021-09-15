@@ -7,10 +7,10 @@ const db = mongoose.connection;
 db.on("error", error => console.log(error));
 db.once("open", () => console.log("Connection to DDBB established"));
 
+module.exports = mongoose
 
 
 
 
 
 
-module.exports = mongoose;
