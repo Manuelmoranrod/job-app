@@ -5,16 +5,16 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         title SignUp page
     body
-        .register-container
+        form(action='/api/user', method="POST")
             label(for="name") Name:
             input(type="text" name="name" id="name" required) 
-            label(for="mail") Email
-            input(type="mail" name="mail" id="mail" required)
-            label(for="birthdate") Birthdate
-            input(type="date" name="birthdate" id="birthdate")
+            label(for="email") Email
+            input(type="email" name="email" id="email" required)
             label(for="password") Password
             .password-container
                 input(type="password" name="password" id="password" required) 
                 i(id="togglePassword" class="fas fa-eye-slash")
-            input(type="submit", value="Signup User")
+            input(type="submit", value="Signup User" id="register_button")
         include ./menu-bar.pug
+
+    script(src='/js/register.js')
