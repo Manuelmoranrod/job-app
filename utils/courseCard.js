@@ -18,8 +18,19 @@ button.addEventListener('click', () => {
             courseCard.setAttribute('class', 'card')
             const title = document.createElement('h3')
             title.innerHTML = course.courseTitle
+            const price = document.createElement('p');
+            price.innerHTML = course.coursePrice
+            const image = document.createElement('img')
+            image.src = course.courseImage
+
+            const description = document.createElement('p')
+            description.innerHTML = course.courseDescription
+            
             //To father, appendChild son
+            courseCard.appendChild(image)
             courseCard.appendChild(title)
+            courseCard.appendChild(description)
+            courseCard.appendChild(price)
             //This "cards" is on home.pug
             cards.appendChild(courseCard);
         });

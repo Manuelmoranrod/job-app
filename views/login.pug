@@ -5,12 +5,14 @@ html(lang="en")
         meta(name="viewport", content="width=device-width, initial-scale=1.0") 
         title Login page
     body
-        .login-container 
-            label(for="mail") Email
-            input(type="mail" name="mail" id="mail" required)
+        form(action='/api/login', method="POST") 
+            label(for="email") Email
+            input(type="email" name="email" id="email" required)
             label(for="password") Password
             .password-container
                 input(type="password" name="password" id="password" required) 
                 i(id="togglePassword" class="fas fa-eye-slash")
-            input(type="submit", value="Login")
+            input(type="submit", value="Login" id="login_button")
         include ./menu-bar.pug
+
+    script(src='/js/login.js')

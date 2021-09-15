@@ -1,13 +1,14 @@
 const router = require('express').Router()
 const apiRouter = require('../controllers/api-petition')
 
+
 //Endpoints USERS
 router.post('/user', apiRouter.registerUser)
 //router.put('/user', apiRouter.editUser)
 //router.delete('/user', apiRouter.deleteUser) //For Admin view
 
 //Endpoints Log IN/OUT
-//router.post('/login', apiRouter.loginApp)
+router.post('/login', apiRouter.loginApp)
 //router.post('/logout', apiRouter.exitApp)
 
 //Endpoints Search

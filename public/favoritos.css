@@ -189,6 +189,7 @@ body {
         overflow: hidden;
         background: #fff;
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
+        margin: 0 auto;
     }
     
     .card img {
@@ -227,9 +228,11 @@ body {
         color: #7D1935;
         margin-right: 12rem;
     }
+
+ 
     
     
-    
+    /* https://runebook.dev/es/docs/codeceptjs/helpers/puppeteer/index */
     /* Media */
     @media only screen and (max-width: 768px) {
         .hamburger.active .bar:nth-child(2) {

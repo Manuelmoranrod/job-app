@@ -10,10 +10,10 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
 
         await page.goto(link)
     
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(100);
         
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
-            courseData['courseDescription'] = await page.evaluate(() => Array.from(document.querySelectorAll('.course-box__text.app_course-box-content.app_description-box'), element => element.textContent));
+            courseData['courseDescription'] = await page.evaluate(() => Array.from(document.querySelectorAll('.course-box__text.app_course-box-content.app_description-box'), element => element.innerHTML));
             courseData['coursePrice'] = await page.$eval('span.price-box__price', price => price.innerText);
             courseData['courseImage'] = await page.$eval('div.boxes-untrack__logo > img', image => image.src);
             courseData['courseDates'] = await page.$eval('.course-venues__date-item:nth-child(n)', dates => dates.innerText)
