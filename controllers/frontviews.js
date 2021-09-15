@@ -27,6 +27,10 @@ const frontView = {
     profile: (req, res) => {
     res.status(200).render('profile')
     },
+    googleLogin:(req, res)=>{
+        console.log('estas dentro')
+        res.status(200).send('estas dentro');
+    }
 }
 
     module.exports = frontView
