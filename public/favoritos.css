@@ -25,8 +25,10 @@ body {
         justify-content: space-between;
         align-items: center;
         padding: 1rem 1.5rem;
-        background-color: #38A3A5;
-        height: 100%;
+        background-color: #7EB5A6;
+        /* height: 100%; */
+        width: 50vh;
+        margin-left: -30px;
     }
     
     .hamburger {
@@ -88,7 +90,7 @@ body {
         height: 3rem;
         margin: 1rem;
         background-color: #D4ECDD;
-        box-shadow: 6px 6px 6px #999;
+        /* box-shadow: 6px 6px 6px #999; */
         cursor: pointer;
     }
     .inicio:active{
@@ -142,12 +144,17 @@ body {
     
     .input {
         margin-top: 1rem;
-        width: 100%;
+        width: 18rem;
+        top: -3rem;
+        height: 2rem;
+        padding-left: 2rem;
+        margin: 0 auto;
         background: transparent;
-        border: none;
+        border: 1px solid #7EB5A6;
         outline: none;
-        border-bottom: 2px solid #6E85B2;
-        color: #628395;
+        border-radius: 20px;
+        /* border-bottom: 2px solid #6E85B2; */
+        color: red;
         font-size: 14px;
         letter-spacing: 2px;
         position: relative;
@@ -181,15 +188,21 @@ body {
    .first {
        margin-top: 5rem;
    }
+
+   .cards {
+       display: flexbox;
+       flex-direction: column;
+       align-items: center;
+   }
     
     .card {
         width: 70%;
-        margin: 20px;
+        margin: 50px;
         border-radius: 6px;
         overflow: hidden;
         background: #fff;
         box-shadow: 0 1px 10px rgba(0, 0, 0, 0.2);
-        margin: 0 auto;
+        /* margin: 0 auto; */
     }
     
     .card img {
@@ -251,7 +264,7 @@ body {
         .nav-menu {
             position: fixed;
             left: -120%;
-            top: 5rem;
+            top: 0rem;
             flex-direction: column;
             background-color: #fff;
             width: 100%;
@@ -260,6 +273,8 @@ body {
             transition: 0.3s;
             box-shadow: 0 10px 27px rgba(0, 0, 0, 0.05);
             margin-left: -2rem;
+            bottom: 0;
+            width: 108%;
         }
     
         .nav-menu.active {

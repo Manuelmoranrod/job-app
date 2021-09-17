@@ -10,7 +10,7 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
 
         await page.goto(link)
     
-        await page.waitForTimeout(100);
+        await page.waitForTimeout(10);
         
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.evaluate(() => Array.from(document.querySelectorAll('.course-box__text.app_course-box-content.app_description-box'), element => element.innerHTML));
@@ -18,12 +18,14 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
             courseData['courseImage'] = await page.$eval('div.boxes-untrack__logo > img', image => image.src);
             courseData['courseDates'] = await page.$eval('.course-venues__date-item:nth-child(n)', dates => dates.innerText)
             courseData['courseLocation'] = await page.$eval('.course-box-item.feature-box:nth-child(n)', location => location.innerText)
-
             courseData['courseAcadeny'] = await page.$eval('section > div.title-box > div > a', academy => academy.title)
-            //console.log(courseData);
+            courseData['courseUrl'] = await page.url();
+            
+           console.log(courseData.courseUrl); 
+
 
             resolve(courseData)
-    }
+    } //console.log(courseData);
     catch(err){
         console.log(err);
 
@@ -41,7 +43,7 @@ const scraperEmagister = async (url) => {
         await page.goto(url)
         console.log(`Navigating to ${url}...`);
 
-        const urls = await page.$$eval('div.course-box-item.title-box > h3 > a', (links) => links.map(link=> link.href))
+        const urls = await page.$$eval('div.course-box-item.title-box > h3 > a', (links) => links.map(link=> link.href).slice(0, 3))
         console.log('urls capturada', urls.length, urls);
 
         for(courseLink in urls){
@@ -57,5 +59,5 @@ const scraperEmagister = async (url) => {
 }
 
 module.exports = { 
-    scraperEmagister
+    scraperEmagister,
 }

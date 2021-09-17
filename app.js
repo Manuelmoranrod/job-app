@@ -3,29 +3,12 @@ require('dotenv').config();
 require('./utils/db')
 const process = require('process')
 const path = require('path');
-
-// const passport = require('passport');
-// const session = require("express-session");
-//const LocalStrategy = require("passport-local").Strategy;
-
-
 const port = process.env.PORT
 const routes = require('./routes/front-routes');
 const apiRoutes = require('./routes/api-routes');
 const app = express();
 
-///////////
 
-// app.use(passport.initialize());
-// app.use(session({
-//     secret: 'secret',
-//     resave: false,
-//     saveUninitialized: false
-// }));
-
-
-
-////////////////
 
 app.use(express.static(path.join(__dirname, 'public')));
 //Middlewares
