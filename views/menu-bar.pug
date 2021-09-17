@@ -2,9 +2,7 @@ style
     include ../public/favoritos.css
 footer.header
     .usuario
-        img.btm(src='https://i.blogs.es/24bcec/the-batman-affleck/840_560.jpg' alt='')
-        .name 
-            a(href='/profile') Bruce
+       
     nav.navbar  
         a.nav-logo(href='#')
         ul.nav-menu
@@ -20,19 +18,20 @@ footer.header
             span.bar
             span.bar
             span.bar
-//- script.
-//-     const hamburger = document.querySelector(".hamburger");
-//-     const navMenu = document.querySelector(".nav-menu");
-//-     hamburger.addEventListener("click", mobileMenu);
-//-     function mobileMenu() {
-//-     hamburger.classList.toggle("active");
-//-     navMenu.classList.toggle("active");
-//-     }
-//-     const navLink = document.querySelectorAll(".nav-link");
-//-     navLink.forEach(n => n.addEventListener("click", closeMenu));
-//-     function closeMenu() {
-//-     hamburger.classList.remove("active");
-//-     navMenu.classList.remove("active");
+script.
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    hamburger.addEventListener("click", mobileMenu);
+    function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    }
+    const navLink = document.querySelectorAll(".nav-link");
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+    function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    }
 
     
     

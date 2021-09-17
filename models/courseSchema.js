@@ -25,7 +25,10 @@ const CourseSchema = new mongoose.Schema({
     },
     online: {
         type: Boolean,
+    },
+    link: {
+        type: String
     }
 })
 
-module.exports = mongoose.model('Course', CourseSchema, 'CourseOffers')
+module.exports = mongoose.model('courses', CourseSchema)
