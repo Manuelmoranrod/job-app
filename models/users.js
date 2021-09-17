@@ -1,5 +1,6 @@
 const dbsql = require('../utils/dbsql')
 
+
 const users = {
     // Insert user
     insertUser: async (data) => {
@@ -23,6 +24,22 @@ const users = {
         }
          //return result
 
+    },
+
+    getUser: async (email) => {
+        let client, result;
+        try {
+            client = await dbsql.connect();
+            result = await dbsql.query('SELECT * FROM users WHERE email=$1', [email])
+            //console.log(result.rows);
+            return result.rows
+        } catch (e) {
+            console.log(e);
+            throw e;
+        }
+        finally {
+            client.release();
+        }
     }
 }
 module.exports = users

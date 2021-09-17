@@ -11,19 +11,22 @@ const extractCourseData = (link, browser) => new Promise (async (resolve, reject
 
         await page.goto(link)
     
-        await page.waitForTimeout(500);
+        await page.waitForTimeout(10);
             
             courseData['courseTitle'] = await page.$eval('h1', title => title.innerText);
             courseData['courseDescription'] = await page.$eval('div.course.container.m-t-30 > div:nth-child(2) > div > div > div:nth-child(2) > div > div', description => description.innerText)
             courseData['coursePrice'] = await page.$eval('body > main > div.course.container.m-t-30 > div:nth-child(1) > div.course__price.colf-md-4.colf-sm-12 > div > div.course__cta.ta--c.p-a-15.p-b-0 > div.o-tooltip.m-t-10 > div', price => price.innerText);
             courseData['courseImage'] = await page.$eval('body > main > div.course.container.m-t-30 > div:nth-child(1) > div.course__info.colf-md-8.colf-sm-12 > img', image => image.src);
-            //courseData['courseDates'] = await page.$eval('.course-venues__date-item:nth-child(n)', dates => dates.innerText)
             courseData['courseLocation'] = await page.$eval('body > main > div.course.container.m-t-30 > div:nth-child(1) > div.course__info.colf-md-8.colf-sm-12 > ul > li:nth-child(3) > span', location => location.innerText)
             courseData['courseAcademy'] = await page.$eval('body > main > div.course.container.m-t-30 > div:nth-child(1) > div.course__info.colf-md-8.colf-sm-12 > p > a', academy => academy.innerText)
+            courseData['courseUrl'] = await page.url();
             
-            console.log(courseData);
+           console.log(courseData.courseUrl); 
+            
+            
 
             resolve(courseData)
+           
     }
     catch(err){
         console.log(err);
@@ -34,6 +37,7 @@ const scraperEducaweb = async (url) => {
     try {
 
         const scraperData = []
+        
 
         console.log("Opening the browser......");
 
@@ -47,7 +51,10 @@ const scraperEducaweb = async (url) => {
 
 
 
-        const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href))
+
+       
+        const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href).slice(0, 3))
+
         //console.log('urls capturada', urls.length, urls);
 
         
@@ -56,6 +63,14 @@ const scraperEducaweb = async (url) => {
             scraperData.push(course)
         }
         //console.log(scraperData, "Lo que devuelve mi función scraper", scraperData.length)
+        
+        
+        
+    
+
+     
+   
+        
         return scraperData
 
 
@@ -70,5 +85,5 @@ const scraperEducaweb = async (url) => {
 module.exports = {
     scraperEducaweb
 }
-//exportado como objeto, no como funcion
+
 
