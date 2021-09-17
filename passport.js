@@ -6,7 +6,7 @@ passport.serializeUser(function(obj, done) {
     done(null, obj);
   });
   
-  passport.deserializeUser(function(id, done) {
+  passport.deserializeUser(function(obj, done) {
       done(null,obj);
   });
 
@@ -26,12 +26,3 @@ passport.use(new GoogleStrategy({
 ));
 
 module.exports = passport;
-// app.get('/google',
-//   passport.authenticate('google', { scope: ['profile','email'] }));
-
-// app.get('/google/callback', 
-//   passport.authenticate('google', { failureRedirect: '/login' }),
-//   function(req, res) {
-//     // Successful authentication, redirect home.
-//     res.redirect('/good');
-//   });

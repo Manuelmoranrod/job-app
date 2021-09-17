@@ -4,8 +4,7 @@ const frontView = {
     home: (req,res) => {
         res.status(200).render('home')
     },
-    signup: (req,res) => {
-        
+    register: (req,res) => {
         res.status(200).render('signup')
     },
     login:(req,res) => {

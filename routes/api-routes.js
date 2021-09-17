@@ -1,15 +1,15 @@
 const router = require('express').Router()
 const apiRouter = require('../controllers/api-petition')
+const jwtAuth = require('../utils/jwtAuth')
 
 //Endpoints USERS
 router.post('/user', apiRouter.registerUser)
-
-//router.put('/user', apiRouter.editUser)
+router.put('/user', jwtAuth.authCookie, apiRouter.modifyUser)
 //router.delete('/user', apiRouter.deleteUser) //For Admin view
 
 //Endpoints Log IN/OUT
 router.post('/login', apiRouter.loginApp)
-//router.post('/logout', apiRouter.exitApp)
+router.get('/logout', apiRouter.exitApp)
 
 //Endpoints Search
 router.get('/search', apiRouter.searchCourse)

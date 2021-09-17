@@ -4,36 +4,34 @@ footer.header
     .usuario
         img.btm(src='https://i.blogs.es/24bcec/the-batman-affleck/840_560.jpg' alt='')
         .name 
-            a(href='/profile') Bruce
+            a(href='/api/logout') Log Out
     nav.navbar  
         a.nav-logo(href='#')
         ul.nav-menu
             li.nav-item
-                a.nav-link(href='#') Inicio
+                a.nav-link(href='/') Inicio
             li.nav-item
-                a.nav-link(href='#') Buscar cursos
+                a.nav-link(href='/register') Register
             li.nav-item
-                a.nav-link(href='#') Logout
+                a.nav-link(href='/login') Login
             li.nav-item
-                a.nav-link(href='#') Editar perfil
+                a.nav-link(href='/profile') Editar perfil
         .hamburger
             span.bar
             span.bar
             span.bar
-//- script.
-//-     const hamburger = document.querySelector(".hamburger");
-//-     const navMenu = document.querySelector(".nav-menu");
-//-     hamburger.addEventListener("click", mobileMenu);
-//-     function mobileMenu() {
-//-     hamburger.classList.toggle("active");
-//-     navMenu.classList.toggle("active");
-//-     }
-//-     const navLink = document.querySelectorAll(".nav-link");
-//-     navLink.forEach(n => n.addEventListener("click", closeMenu));
-//-     function closeMenu() {
-//-     hamburger.classList.remove("active");
-//-     navMenu.classList.remove("active");
 
-    
-    
-
+script.
+    const hamburger = document.querySelector(".hamburger");
+    const navMenu = document.querySelector(".nav-menu");
+    hamburger.addEventListener("click", mobileMenu);
+    function mobileMenu() {
+    hamburger.classList.toggle("active");
+    navMenu.classList.toggle("active");
+    }
+    const navLink = document.querySelectorAll(".nav-link");
+    navLink.forEach(n => n.addEventListener("click", closeMenu));
+    function closeMenu() {
+    hamburger.classList.remove("active");
+    navMenu.classList.remove("active");
+    }
