@@ -49,7 +49,12 @@ const scraperEducaweb = async (url) => {
         console.log(`Navigating to ${url}...`);
 
 
+
+
+
+       
         const urls = await page.$$eval('div > header > h3 > a', (links) => links.map(link=> link.href).slice(0, 3))
+
         //console.log('urls capturada', urls.length, urls);
 
         

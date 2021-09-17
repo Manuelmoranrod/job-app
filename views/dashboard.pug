@@ -8,12 +8,30 @@ html(lang='en')
     style 
       include ../public/favoritos.css
       include ../public/header-bar.css
+      include ../public/dashboard.css
     title Dashboard 
   body
     include ./header-bar.pug
-    .card
-      .button.button.button1 Add
-        .footer
+
+    
+      .button
+        input(type='button' value='Add')
+
+    
+    .footer
+      .img
+         img.imgProfile(src='/images/profile.png' alt='profile')
+      .img
+        img.imgHmb(src='/images/menuhamburger.png' alt='menuhamburger')
+      .menuHamburger
+        .img
+        
+
+        
+
+
+
+  
         
         
     
