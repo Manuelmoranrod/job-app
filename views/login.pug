@@ -9,7 +9,6 @@ html(lang="es")
         link(rel="stylesheet", href="login.css")
         title Login page
     body
-
         .inicio 
             i.fas.fa-home.fa-2x
         .encabezado
@@ -18,9 +17,9 @@ html(lang="es")
         p.arriba LogIn
         .formulario
         form(action='/api/login', method="POST") 
-            label(for="email") Email
+            label(for="email") Password
             input(type="email" name="email" id="email" class="email" required) 
-            label(for="password") Password
+            label(for="password") Email
             .password-container
                 input(type="password" name="password" id="password" class="password" required) 
                 
@@ -30,7 +29,7 @@ html(lang="es")
             a(href="/google/") Continuar con Google 
         .facebook-container
             <img src="https://img.icons8.com/color/48/000000/facebook.png" width="40" height="40" class="logo-google"/>
-            a(href="/google/") Continuar con Facebook 
+            a(href="/facebook/") Continuar con Facebook 
         
         include ./menu-bar.pug
 

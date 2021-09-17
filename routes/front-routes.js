@@ -1,6 +1,5 @@
 const router = require('express').Router()
 const frontViews = require('../controllers/frontviews')
-const passport = require('passport')
 const jwtAuth = require('../utils/jwtAuth')
 const passport = require("../google");
 const facebook = require("../facebook");
@@ -12,6 +11,7 @@ router.get('/register', frontViews.register)//inscription formulary
 router.get('/login', frontViews.login)// Login with jwtAuth 
 router.get('/google',passport.authenticate('google', { scope: ['profile','email'] }),(req,res)=>{res.redirect('/dashboard')});
 router.get('/google/callback', passport.authenticate('google', { successRedirect:"/", failureRedirect: '/login' }),frontViews.googleLogin );
+
 router.get('/facebook',passport.authenticate('facebook'));
 router.get('/facebook/callback',passport.authenticate('facebook', { failureRedirect: '/login' }),(req, res) =>{res.redirect('/'); });
 

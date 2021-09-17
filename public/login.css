@@ -95,7 +95,7 @@ label[for=email] {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-243%, 109%);
+    transform: translate(-122%, 109%);
     color: #8E2657;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
@@ -105,7 +105,7 @@ label[for=password] {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-140%, -496%);
+    transform: translate(-217%, -496%);
     color: #8E2657;
     font-family: Arial, Helvetica, sans-serif;
     font-size: 16px;
