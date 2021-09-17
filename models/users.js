@@ -1,5 +1,6 @@
 const dbsql = require('../utils/dbsql')
 
+
 const users = {
     // Insert user on DDBB SQL
     insertUser: async (name, email, hashedPassword) => {
@@ -18,6 +19,7 @@ const users = {
         finally {
             client.release();
         }
+
         //return result
     },
     //Login user mediante email

@@ -13,13 +13,19 @@ const cookieParser = require('cookie-parser');
 const routes = require('./routes/front-routes');
 const apiRoutes = require('./routes/api-routes');
 
+// require("./facebook")();
+// const cookieSession=require('cookie-session');
+// const bodyParser = require('body-parser')
 
 //Acceso a carpeta public
 app.use(express.static(path.join(__dirname, 'public')));
 
 //Passport
-app.use(passport.initialize())
-app.use(passport.session())
+app.use(passport.initialize());
+app.use(passport.session());
+
+app.use(require('express-session')({ secret: 'keyboard cat', resave: false, saveUninitialized: false }));
+
 
 //Middlewares
 app.use(cookieParser())
@@ -42,4 +48,6 @@ app.get('*', (req, res)=>{
 app.listen(port, () => {
     console.log(`Conectados al puerto ${port}!!`)
 });
+
+
 

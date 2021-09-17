@@ -2,6 +2,19 @@ body {
   background-color: rgb(154, 154, 179);
   justify-content: space-between;
   }
+<<<<<<< HEAD
+  .button {
+    width: 70px;
+    background-color: #e7a923;
+    font-size: 16px;
+    padding: 15px 32px;
+    text-align: center;
+    margin: 110px;
+    position: relative;
+    top: 300px; left: 300px;
+    
+  }
+=======
   
     
   .button {
@@ -23,6 +36,7 @@ body {
   }
   
   
+>>>>>>> b570c837b1c1f1ca7ab8d0e03e0b5ac804edf639
 
 .footer {
   background-color: cornflowerblue;

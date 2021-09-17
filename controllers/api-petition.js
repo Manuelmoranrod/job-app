@@ -16,6 +16,8 @@ const apiRouter = {
             const emagister = await scraperEmagister(`https://www.emagister.com/web/search/?searchAction=search&idsegment=1&q=${param}`)
             const data = emagister.concat(educaweb)
 
+            console.log('DATA', data);
+
             res.status(200).json(data)
         } catch (error) {
             res.status(400).json({
@@ -25,6 +27,7 @@ const apiRouter = {
     },
     registerUser: async (req,res) => {
         try{
+
             const name = req.body.name
             const email = req.body.email
             const password = req.body.password
@@ -33,12 +36,14 @@ const apiRouter = {
             console.log("HOLIII");
             res.status(200).redirect('/login');
 
+
         }catch(error){
             res.status(400).json({
                 error: error.message
             })
         }
     },
+
     loginApp: async (req,res) => {
         try{
             console.log(req.body);
@@ -58,11 +63,13 @@ const apiRouter = {
             console.log("Login KO");
             return res.status(404).redirect('/login')
             
+
         }catch(error){
             res.status(400).json({
                 error: error.message
             })
         }
+
     },
     modifyUser: async (req,res) => {
         try{
@@ -89,5 +96,6 @@ const apiRouter = {
     }
 
 }
+
 
 module.exports = apiRouter
